@@ -1,7 +1,7 @@
 export const categories = [
     {
       id: 1,
-      img: "../Image/DB.png",
+      img: "../Image/db.jpg",
       cat: "deutsche bank"
     },
     {
