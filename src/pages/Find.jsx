@@ -12,27 +12,23 @@ const Nav = styled.div`
     
 `
 const Container = styled.div`
-    height: 70vh;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(#431d5a, #52104a);
+    background-color: rgb(17 17 17 )
 `
 
 const Wrapper = styled.div`
     padding: 50px;
     width: 60%;
     border-radius: 30px;
-    background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 `
 
 const Text = styled.h1`
-    color: #e2498a;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-color: transparent;
-    background-image: radial-gradient(at center center, #e2498a 0%, #6830c8 70%);
+    color: white;
     font-family: "Raleway", Sans-serif;
     font-size: 40px;
     font-weight: 600;
@@ -40,6 +36,20 @@ const Text = styled.h1`
     display: flex;
     align-items: center;
     justify-content: center;
+`
+
+const Text1 = styled.h1`
+    color: white;
+    font-family: "Raleway", Sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(17 17 17 );
+    margin-top: 0;
+    margin-bottom: 0;
 `
 
 const SearchSection = styled.div`
@@ -52,7 +62,7 @@ const SearchSection = styled.div`
     position: relative;
 `
 const SearchBar = styled.div`
-    background-color: rgb(227, 227, 227);
+    background-color: #343434;
     border-radius: 30px;
     width: 500px;
     min-height: 50px;
@@ -68,17 +78,18 @@ const Input = styled.input`
     font-size: 20px;
     background-color: transparent;
     border: none;
-
+    color: white;
     &:focus{
         outline: none;
     }
 `
 const SearchResult = styled.div`
-    background: rgb(227, 227, 227);
+    background-color: #343434;
     width: 400px;
     margin-top: 10px;
     position: absolute;
     top: 70px;
+    border-radius: 15px;
     ::-webkit-scrollbar{
         display: none;
     }
@@ -93,38 +104,23 @@ const A = styled.p`
     color: black;
     margin-top: 2px;
     margin-bottom: 2px;
+    color: white;
+    border-radius: 15px;
+
 
     &:hover {
-        background: rgb(227, 227, 227);
+        background-color: #343434;
     }
 `
 
 const Icon = styled.div`
-    background-color: rgb(227, 227, 227);
+    background-color: #343434;
+    color: white;
     padding: 0 25px;
     height: 100%;
     display: flex;
     align-items: center;
     cursor: pointer;
-`
-
-
-const ContainerImage = styled.div`
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(170deg, #8d77b3 0%, #be95a6 70%);
-`
-const Image = styled.img`
-    padding: 5px;
-    margin-top: 70px;
-    margin-bottom: 70px;
-    height: 500px;
-    width: 900px;
-    /* outline: white; */
-    border: solid white 10px;
-    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 `
 
 
@@ -175,9 +171,7 @@ export default function Find(){
                             />
                             <Icon>
                                 {search === "" ? (
-                                    <Link to = {`/find/${search}`} style={{textDecoration:"none"}}>
-                                        <SearchIcon/>
-                                    </Link>
+                                    <SearchIcon/>
                                 ) : (
                                     <CloseIcon onClick={handleClose}/>
                                 )}
@@ -200,12 +194,9 @@ export default function Find(){
                 </Wrapper>
             </Container>
             
-            {cat && <Text>{decodeURIComponent(cat)}</Text>}
+            {cat && <Text1>{decodeURIComponent(cat)}</Text1>}
             <ProfileAll cat = {cat}/>
 
-            <ContainerImage>
-                <Image src = "../Image/Placment-Records.jpg" alt = "" />
-            </ContainerImage>
             <Batch/>
             <Footer/>
         </Nav>
