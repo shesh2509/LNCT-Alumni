@@ -1,0 +1,82 @@
+import styled from "styled-components";
+
+const Container = styled.div`
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: #cce8e8;
+`
+const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
+
+const Text = styled.h1`
+    color: #e2498a;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: transparent;
+    background-image: radial-gradient(at center center, #e2498a 0%, #6830c8 70%);
+    font-family: "Raleway", Sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 30px;
+`
+
+const List = styled.div`
+    height: 150px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(#431d5a, #52104a);
+    margin: 0 30px;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+`
+
+const ListW = styled.div`
+    padding: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+
+`
+
+export default function Batch() {
+    return(
+        <Container>
+            <Wrapper>
+                <div><Text>Batch Wise List</Text></div>
+
+                <ListW>
+                    <List>
+                        <a href = "https://lnct.ac.in/wp-content/uploads/2023/05/LNCT-GROUP-Placed-Students-2022-23-BATCH.pdf" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none", fontSize:"25px"}}>BATCH <br/>2022-2023</a>
+                    </List>  
+
+                    <List>
+                        <a href = "https://lnct.ac.in/wp-content/uploads/2022/10/Placment-Records.pdf" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none", fontSize:"25px"}}>BATCH <br/> 2021-2022</a>
+                    </List>  
+
+                    <List>
+                        <a href = "https://lnct.ac.in/wp-content/uploads/2021/07/LNCT-GROUP-PLACEMENT-RECOARD-2020-21-BATCH.pdf" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none", fontSize:"25px"}}>BATCH <br/> 2020-2021</a>
+                    </List>  
+
+                    <List>
+                        <a href = "https://lnct.ac.in/wp-content/uploads/2021/05/LNCT-GROUP-PLACEMENT-RECORD-2019-20.pdf" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none", fontSize:"25px"}}>BATCH <br/>2019-2020</a>
+                    </List>  
+                </ListW>    
+            </Wrapper>
+        </Container>
+    )
+}
