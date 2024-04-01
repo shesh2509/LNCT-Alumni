@@ -281,7 +281,7 @@ export default function Register(){
                                     alt = "upload image" className="img-display-after"/>
                                 ) :(
                                     // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                                    <img src = "../Image/profile.png" alt = "upload image" className="img-display-before"/>
+                                    <img src = "../Image/pro.jpg" alt = "upload image" className="img-display-before"/>
                                 )}
 
                                 <input
