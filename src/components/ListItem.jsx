@@ -5,12 +5,13 @@ import {Link} from 'react-router-dom';
 const Div1 = styled.div`
     height: 200px;
     width: 200px;
-    background-color: #cce8e8;
+    background-color: #212121;
     cursor: pointer;
-
+    border-radius: 30px;
     &:hover {
-        background-image: linear-gradient(#431d5a, #52104a);
-        transform: scale(1.1);
+        background-color: #343434;
+        transform: scale(1.05);
+        border: solid white 0.8px;
     }
 `
 
@@ -18,7 +19,7 @@ const Circle = styled.div`
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    background-color: white;
+    background-color: #343434;
     position: absolute;
     margin-top: 25px;
     margin-left: 25px;
@@ -30,6 +31,7 @@ const Image = styled.img`
     margin-top: 25px;
     margin-left: 25px;
     position: absolute;
+    border-radius: 100%;
 `
 
 export default function ListItem({item}) {
