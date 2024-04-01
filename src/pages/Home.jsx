@@ -11,30 +11,34 @@ const Container1 = styled.div``
 
 const Container = styled.div`
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(#431d5a, #52104a);
+    //background-image: linear-gradient(#431d5a, #52104a);
+    background-color: rgb(17 17 17 );
+    margin-bottom: 0;
 `
 
 const Wrapper = styled.div`
+    padding: 0px 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 `
 
 const Sdiv = styled.div`
-    margin-left: 50px;
+    /* margin-left: 50px; */
 `
 
 const Idiv = styled.div`
+    margin-top: -70px;
     margin-right: 50px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
 `
 
 const Adiv = styled.div`
-    margin-right: 30px;
+    /* margin-right: 30px; */
 `
 
 const Text = styled.h1`
@@ -51,13 +55,10 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     padding: 15px 20px;
-    border-style: solid;
-    border-color: white;
-    border-radius: 5px;
-    background-color: white;
-    color: blueviolet;
+    background-color: #343434;
+    color: white;
     font-weight: bold;
-    font-size: medium;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 30px;
     margin-bottom: 20px;
@@ -65,14 +66,26 @@ const Button = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        background-image: linear-gradient(#431d5a, #52104a);
+        background-color: #212121;
         color: white;
-        transform: scale(1.1);
+        transform: scale(1.05);
+        border: solid white 0.8px;
     }
 `
 const Image = styled.img`
-    width: 500px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
+    margin-top: 0;
+    animation: rotation 8s infinite linear;
+
+    @keyframes rotation {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(359deg);
+        }
+    }
 `
 
 
@@ -107,7 +120,7 @@ export default function Home() {
                 </Sdiv>
 
                 <Idiv>
-                    <Image src = "../Image/home.png" alt = ""/>
+                    <Image src = "../Image/Home.png" alt = ""/>
                 </Idiv>
 
                 <Adiv>
