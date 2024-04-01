@@ -6,10 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const Container = styled.div`
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(#261063, #451b58);
-    /* position: fixed;
-    top: 0;
-    width: 100%; */
+    background-color: rgb(17 17 17 );
 `
 
 const Wrapper = styled.div`
