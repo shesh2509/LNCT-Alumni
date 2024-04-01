@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    height: 140px;
-    background-color: black;
+    height: 100px;
+    background-color: rgb(17 17 17 );
 `
 
 const Text = styled.p`
-    color: white;
+    color: #b82020;
     margin-left: 400px;
     margin-top: 20px;
+    margin-bottom: 0;
 `
 
 const ImageL = styled.img`
@@ -29,7 +30,7 @@ const Wrapper2 = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 10px;
 `
 
 export default function Footer(){
