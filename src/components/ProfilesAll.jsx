@@ -10,6 +10,7 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: rgb(17 17 17 );
 `
 export default function ProfileAll({cat}){
   const [profiles, setProfiles] = useState([]);
