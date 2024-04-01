@@ -8,6 +8,7 @@ const Container = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    background-color: rgb(17 17 17 );
     
 `
 
@@ -19,14 +20,16 @@ const Wrapper = styled.div`
 const Div1 = styled.div`
     height: 280px;
     width: 200px;
-    background-color: #cce8e8;
+    background-color: #212121;
+    border-radius: 15px;
     cursor: pointer;
+    color:white;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 
     &:hover {
-        background-image: linear-gradient(#431d5a, #52104a);
-        transform: scale(1.1);
-        color: white;
+        background-color: #343434;
+        transform: scale(1.05);
+        border: solid white 0.8px;
     }
 `
 
@@ -62,11 +65,6 @@ const Name2 = styled.p`
     margin-top: 0;
     font-weight: bold;
 `
-// const Name1 = styled.p``
-// const Name2 = styled.p``
-
-
-
 
 export default function profile({item}) {
     return (
