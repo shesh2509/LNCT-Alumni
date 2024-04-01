@@ -6,15 +6,15 @@ import ListItem from "../components/ListItem"
 const Container = styled.div`
     height: 80vh;
     padding: 10px;
-    
+    background-color: rgb(17 17 17 )
 `
 
 const Heading = styled.h1`
     color: white;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-color: transparent;
-    background-image: radial-gradient(at center center, #e2498a 0%, #6830c8 70%);
+    background-color: white;
+    //background-image: radial-gradient(at center center, #e2498a 0%, #6830c8 70%);
     font-family: "Raleway", Sans-serif;
     font-size: 50px;
     font-weight: 500;
