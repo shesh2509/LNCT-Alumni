@@ -12,13 +12,14 @@ const Container1 = styled.div`
 `
 
 const Container = styled.div`
-    width: 100vw;
-    height: 320vh;
+    height: 1750px;
+    width: 100vw; 
     overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(#431d5a, #52104a);
+    /* background-image: linear-gradient(#431d5a, #52104a); */
+    background-color: rgb(17 17 17 );
 `
 
 const Wrapper = styled.div`
@@ -27,6 +28,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     border-radius: 30px;
     background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 `
 
@@ -34,6 +36,7 @@ const Title = styled.h1`
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+    color: white;
 `
 
 const Form = styled.form`
@@ -45,7 +48,8 @@ const Input = styled.input`
     margin: 10px 0px;
     padding: 15px;
     font-size: 15px;
-    background-color: #dedede;
+    background-color: #343434;
+    color: white;
     border: none;
     border-radius: 30px;
 
@@ -60,11 +64,10 @@ const Button = styled.button`
     border-radius: 5px;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: white;
-    background-image: linear-gradient(#431d5a, #52104a);
+    background-color: #343434;
     color: white;
     font-weight: bold;
-    font-size: medium;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 50px;
     margin-bottom: 20px;
@@ -73,7 +76,10 @@ const Button = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        transform: scale(1.1);
+        background-color: #212121;
+        color: white;
+        transform: scale(1.05);
+        border: solid 0.8px white;
     }
 `
 const FormContainer = styled.div`
@@ -125,7 +131,8 @@ const ProfilePic = styled.div`
 const Textarea = styled.textarea`
     margin-left: 65px;
     font-size: 15px;
-    background-color: #dedede;
+    background-color: #343434;
+    color: white;
     padding: 30px;
     border: none;
     border-radius: 30px;
@@ -260,31 +267,31 @@ export default function EditUser(){
                     <FormContainer>
                         <FormContainer1>
 
-                            <label style={{marginLeft: "10px"}}>Full Name:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Full Name:</label>
                             <Input type="text" name="fullName" value={profile?.fullName} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>College:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>College:</label>
                             <Input  type="text" name="college" value={profile?.college} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>Enrollment Number:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Enrollment Number:</label>
                             <Input  type="text" name="enrollmentNumber" value={profile?.enrollmentNumber} disabled/>
 
-                            <label style={{marginLeft: "10px"}}>Company:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Company:</label>
                             <Input  type="text" name="company" value={profile?.company} onChange={handleInputChange}/>
 
                         </FormContainer1>
 
                         <FormContainer2>
-                            <label style={{marginLeft: "10px"}}>Email:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Email:</label>
                             <Input type="email" name="email" value={profile?.email} disabled/>
 
-                            <label style={{marginLeft: "10px"}}>Branch:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Branch:</label>
                             <Input type="text" name="branch" value={profile?.branch} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>Passing Year:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Passing Year:</label>
                             <Input type="text" name="passingYear" value={profile?.passingYear} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>Package:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Package:</label>
                             <Input type="text" name="package" value={profile?.package} onChange={handleInputChange}/>
 
                         </FormContainer2>
@@ -293,21 +300,21 @@ export default function EditUser(){
 
                     <SocialMedia>
                         <p
-                        style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px"}}
+                        style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color: "white"}}
                         >Your's Social Media Profiles</p>
                         <SocialMediaConatiner>
-                            <label style={{marginLeft: "10px"}}>LinkedIn:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>LinkedIn:</label>
                             <Input type="text" name="linkedIn" value={profile?.linkedIn} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>Instagram:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Instagram:</label>
                             <Input type="text" name="instagram" value={profile?.instagram} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px"}}>Github:</label>
+                            <label style={{marginLeft: "10px", color: "white"}}>Github:</label>
                             <Input type="text" name="twitter" value={profile?.twitter} onChange={handleInputChange}/>
                         </SocialMediaConatiner>
                     </SocialMedia>
                     <Interview>
-                        <p style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px"}}> Share Your Interview Experience</p>
+                        <p style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color: "white"}}> Share Your Interview Experience</p>
                         <Textarea  rows="20" cols="68" name="interview" value={profile?.interview} onChange={handleInputChange}></Textarea>
                     </Interview>
                     <Button type="submit">UPDATE</Button>
