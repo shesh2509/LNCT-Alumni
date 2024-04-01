@@ -14,14 +14,15 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(#431d5a, #52104a);
+    /* background-image: linear-gradient(#431d5a, #52104a); */
+    background-color: rgb(17 17 17 );
 `
 
 const Wrapper = styled.div`
     padding: 20px;
     width: 31%;
     border-radius: 30px;
-    background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 `
 
@@ -29,6 +30,7 @@ const Title = styled.h1`
     font-size: 24px;
     font-weight: bold;
     text-align: center;
+    color: white;
 `
 
 const Image = styled.img`
@@ -52,7 +54,8 @@ const Input = styled.input`
     margin: 10px 0px;
     padding: 15px;
     font-size: 15px;
-    background-color: #dedede;
+    background-color: #343434;
+    color: white;
     border: none;
     border-radius: 30px;
 
@@ -67,10 +70,10 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     padding: 15px 20px;
-    background-image: linear-gradient(#431d5a, #52104a);
+    background-color: #212121;
     color: white;
     font-weight: bold;
-    font-size: medium;
+    font-size: 20px;
     cursor: pointer;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -79,23 +82,23 @@ const Button = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        transform: scale(1.1);
+        background-color: #343434;
+        color: white;
+        transform: scale(1.05);
+        border: solid 0.8px white;
     }
 `
 
 const Button2 = styled.button`
-
     width: 60%;
     border: none;
     border-radius: 5px;
     padding: 15px 20px;
-    border-style: solid;
-    border-color: white;
     border-radius: 5px;
-    background-color: white;
-    color: blueviolet;
+    background-color: #212121;
+    color: white;
     font-weight: bolder;
-    font-size: medium;
+    font-size: 17px;
     cursor: pointer;
     margin-top: 0;
     margin-left: 80px;
@@ -103,18 +106,16 @@ const Button2 = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        background-image: linear-gradient(#431d5a, #52104a);
+        background-color: #343434;
         color: white;
-        transform: scale(1.1);
+        transform: scale(1.05);
+        border: solid 0.8px white;
     }
 `
 
 const Text = styled.div`
-    /* display: flex;
-    flex-direction: column; */
     margin-top: 0px;
     margin-left: 200px;
-    /* width: 30%; */
     width: 30vw;
     height: 65vh;
 `
@@ -158,7 +159,7 @@ export default function Login(){
             
             <Wrapper>
                 <Title> LOGIN AS ALUMNI</Title>
-                <Image src = "../Image/logo.png" alt = ""/>
+                <Image src = "../Image/LNCT-Logo.png" alt = ""/>
                 <Form >
                     <Input {...formik.getFieldProps('enrollmentNumber')} placeholder = "Enrollment No."/>
                     <Input {...formik.getFieldProps('password')} placeholder = "Password" type = "password"/>
