@@ -13,14 +13,15 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: linear-gradient(#431d5a, #52104a);
+    //background-image: linear-gradient(#431d5a, #52104a);
+    background-color: rgb(17 17 17 );
 `;
 
 const Wrapper = styled.div`
     /* padding: 20px; */
     width: 70%;
     border-radius: 20px;
-    background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 0px 6px 20px 0px rgba(0,0,0,0.5);
     margin-bottom: 8px;
     margin-top: 20px;
@@ -43,7 +44,7 @@ const Ppic = styled.img`
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    border: solid white 8px;
+    border: solid #212121 8px;
     margin-top: 250px;
     margin-left: 50px;
 `
@@ -68,11 +69,11 @@ const DetailCompany= styled.div``
 const Name = styled.h2`
     margin-left: 300px;
     margin-bottom: 0px;
+    color: white;
 `
 
 const Clg = styled.p`
-    color: #3f3f3f;
-    font-weight: bold;
+    color: white;
     margin-top: 0;
     margin-bottom: 0;
     margin-right: 10px;
@@ -82,7 +83,7 @@ const WrapperSocial = styled.div`
     /* padding: 20px; */
     width: 70%;
     border-radius: 20px;
-    background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
     margin-bottom: 8px;
 `
@@ -104,7 +105,7 @@ const ImgL = styled.img`
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 `
 const ImgI = styled.img`
@@ -114,7 +115,7 @@ const ImgI = styled.img`
     border-radius: 35px;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 `
 
@@ -125,42 +126,45 @@ const ImgT = styled.img`
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 `
 
 const WrapperInterview = styled.div`
     width: 70%;
     border-radius: 20px;
-    background-color: white;
+    background-color: #212121;
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
     margin-bottom: 100px;
 `
 
 const InterviewDiv = styled.div`
     width: 80%;
-    /* height: 300px; */
     padding: 20px;
-    border: solid #3f3f3f 1px;
     border-radius: 20px;
     margin-left: 65px;
     margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 `
 const Interview = styled.p`
+    color: white;
+    font-size: 20px;
 `
 
 const Text = styled.p`
     text-decoration: none;
+    color: white;
 `
 
 const Icon = styled.button`
     width: 150px;
     height: 40px;
     border: none;
-    border-radius: 20px;
-    background-color: #b9d7a3;
+    border-radius: 15px;
+    background-color: #343434;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,8 +175,10 @@ const Icon = styled.button`
     box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
 
     &:hover{
-        background-color: #e9f5f5;
-        transform: scale(1.1);
+        background-color: #212121;
+        color: white;
+        transform: scale(1.05);
+        border: solid white 0.8px;
     }
 `
 
@@ -230,7 +236,7 @@ export default function FullProfile() {
             </Wrapper>
 
             <WrapperSocial>
-                <h2 style={{marginLeft:"30px"}}>Social Media</h2>
+                <h2 style={{marginLeft:"30px", color:"white"}}>Social Media</h2>
                 <SocialMedia>
                     <div>
                         <a href = {profile?.linkedIn} rel="noreferrer" target="_blank" >
@@ -253,7 +259,7 @@ export default function FullProfile() {
             </WrapperSocial>
 
             <WrapperInterview>
-                <h2 style={{marginLeft:"30px"}}>Interview Experience</h2>
+                <h2 style={{marginLeft:"30px", color:"white"}}>Interview Experience</h2>
                 <InterviewDiv>
                     <Interview>
                         {profile?.interview}
