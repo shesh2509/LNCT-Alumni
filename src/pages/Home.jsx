@@ -76,7 +76,7 @@ const Image = styled.img`
     width: 400px;
     height: 400px;
     margin-top: 0;
-    animation: rotation 8s infinite linear;
+    animation: rotation 30s infinite linear;
 
     @keyframes rotation {
         from{
