@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {useFormik} from 'formik';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
+//import { mobile } from "../responsive";
 //import React, { useState, useEffect } from 'react';
 
 const Container1 = styled.div``
@@ -70,7 +71,7 @@ const Button = styled.button`
     border: none;
     border-radius: 5px;
     padding: 15px 20px;
-    background-color: #212121;
+    background-color: #343434;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -82,7 +83,7 @@ const Button = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        background-color: #343434;
+        background-color: #212121;
         color: white;
         transform: scale(1.05);
         border: solid 0.8px white;
@@ -95,7 +96,7 @@ const Button2 = styled.button`
     border-radius: 5px;
     padding: 15px 20px;
     border-radius: 5px;
-    background-color: #212121;
+    background-color: #343434;
     color: white;
     font-weight: bolder;
     font-size: 17px;
@@ -106,7 +107,7 @@ const Button2 = styled.button`
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 
     &:hover{
-        background-color: #343434;
+        background-color: #212121;
         color: white;
         transform: scale(1.05);
         border: solid 0.8px white;
