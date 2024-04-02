@@ -8,6 +8,7 @@ const Div1 = styled.div`
     background-color: #212121;
     cursor: pointer;
     border-radius: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
     &:hover {
         background-color: #343434;
         transform: scale(1.05);
