@@ -15,11 +15,14 @@ const Text = styled.p`
 const ImageL = styled.img`
     height: 20px;
     width: 20px;
+    margin-top: 5px;
+    margin-right: 0px;
 `
 
 const ImageI = styled.img`
     height: 20px;
     width: 20px;
+    margin-top: 5px;
 `
 
 const Wrapper = styled.div`
@@ -43,13 +46,23 @@ export default function Footer(){
             </Wrapper>
 
             <Wrapper2>
-                <a href = "https://www.linkedin.com/in/shesh2509/" rel="noreferrer" target="_blank" style={{color:"white", marginRight:"20px", textDecoration:"none"}}>
-                    <ImageL src = "../Image/linkedin.png" /> /shesh2509
+                
+                <a href = "https://www.linkedin.com/in/shesh2509/" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none"}}>
+                    <ImageL src = "../Image/linkedin.png" />
                 </a>
+                <a href = "https://www.linkedin.com/in/shesh2509/" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none"}}>
+                    <p style={{color:"white", marginLeft:"0px", marginRight:"10px"}}>@shesh</p>
+                </a>
+                
                 <p style={{color:"white"}}>Copyright @ SHESH</p>
                 <a href = "https://www.instagram.com/shesh2509/" rel="noreferrer" target="_blank" style={{color:"white", marginLeft:"20px", textDecoration:"none"}}>
-                    <ImageI src = "../Image/instagram.png"/> @shesh2509
+                    <ImageI src = "../Image/instagram.png"/>
                 </a>
+                <a href = "https://www.instagram.com/shesh2509/" rel="noreferrer" target="_blank" style={{color:"white", textDecoration:"none"}}>
+                    <p style={{color:"white"}}>@shesh</p>
+                </a>
+                
+
             </Wrapper2>
             
            
