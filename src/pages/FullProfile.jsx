@@ -211,7 +211,7 @@ export default function FullProfile() {
                     </PDiv>
                 </Cover>
                 <Name>
-                    {profile?.fullName.toUpperCase()}
+                    {profile?.fullName}
                 </Name>
                 
                 <Detail>
