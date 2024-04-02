@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Navbar2 from "../components/Navbar";
-import React, {useState, useRef} from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom'
 import "./Register.css";
-import {useFormik} from 'formik';
+import { useFormik } from 'formik';
 import axios from 'axios';
 
 
@@ -20,7 +20,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     //background-image: linear-gradient(#431d5a, #52104a);
-    background-color: rgb(17 17 17 );
+    background-color: rgb(17 17 17);
 `
 
 const Wrapper = styled.div`
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
     margin: 0 auto;
     border-radius: 30px;
     background-color: #212121;
-    box-shadow: 0px 8px 16px 0 rgba(0,0,0,0.5), 10px 6px 20px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.5), 10px 6px 20px 0px rgba(0, 0, 0, 0.5);
 `
 
 const Title = styled.h1`
@@ -63,7 +63,7 @@ const Input = styled.input`
     border: none;
     border-radius: 30px;
 
-    &:focus{
+    &:focus {
         outline: none;
     }
 `
@@ -82,9 +82,9 @@ const Button = styled.button`
     margin-bottom: 20px;
     margin-left: 230px;
     align-items: center;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    &:hover{
+    &:hover {
         background-color: #212121;
         color: white;
         transform: scale(1.05);
@@ -146,15 +146,20 @@ const Textarea = styled.textarea`
     border: none;
     border-radius: 30px;
 
-    &:focus{
+    &:focus {
         outline: none;
     }
 
 `
 
-export default function Register(){
+const RequiredLabel = styled.label`
+    margin-left: 10px;
+    color: red;
+`
 
-    const[image, setImage] = useState(null);
+export default function Register() {
+
+    const [image, setImage] = useState(null);
     const hiddenFileInput = useRef(null);
     const navigate = useNavigate();
 
@@ -174,7 +179,7 @@ export default function Register(){
                 canvas.height = maxSize;
                 const ctx = canvas.getContext("2d");
                 ctx.drawImage(
-                    img, 
+                    img,
                     (maxSize - img.width) / 2,
                     (maxSize - img.height) / 2
                 );
@@ -216,6 +221,11 @@ export default function Register(){
 
     async function registerUser(credentials) {
         try {
+            if (!image) {
+                credentials.profilePic = "../Image/profile.png";
+            } else {
+                credentials.profilePic = await convertImageToBase64(image);
+            }
             //const { data: { msg } } = await axios.post(`http://localhost:5000/api/auth/register`, credentials);
             const { data: { msg } } = await axios.post(`https://alumni-app-beryl.vercel.app/api/auth/register`, credentials);
             return msg;
@@ -225,7 +235,7 @@ export default function Register(){
     }
 
     const formik = useFormik({
-        initialValues : {
+        initialValues: {
             fullName: '',
             email: '',
             college: '',
@@ -244,15 +254,15 @@ export default function Register(){
         },
         validateOnBlur: false,
         validateOnChange: false,
-        onSubmit : async values => {
+        onSubmit: async values => {
             //values = await Object.assign(values, {profilePic: image || ''})
             if (values.password !== values.confirmPassword) {
                 //Passwords do not match
                 alert('Passwords do not match');
             }
-            values.profilePic = image ? await convertImageToBase64(image): '';
+            values.profilePic = image ? await convertImageToBase64(image) : '';
             const registerPromise = registerUser(values);
-            registerPromise.then(function(){ navigate('/')});
+            registerPromise.then(function () { navigate('/') });
             console.log(values)
         }
     })
@@ -260,108 +270,107 @@ export default function Register(){
 
     return (
         <Container1>
-            <Navbar2/>
+            <Navbar2 />
             <Container>
-            
-            <Wrapper>
-                <Title> REGISTER AS ALUMNI</Title>
-                <Image src = "../Image/LNCT-Logo.png" alt = ""/>
 
-                <Form>
-                    <Profile>
-                        <label htmlFor = "image-upload-label" className="image-upload-label">
-                            {"Upload Profile Picture:"}
-                        </label>
-                        <ProfilePic>
+                <Wrapper>
+                    <Title> REGISTER AS ALUMNI</Title>
+                    <Image src="../Image/LNCT-Logo.png" alt="" />
+                    <p style={{color:"#b82020", marginLeft:"300px", marginBottom:"0px", marginTop:"0px"}} >All * are required field</p>
+                    <Form>
+                        <Profile>
+                            <label htmlFor="image-upload-label" className="image-upload-label">
+                                {"Upload Profile Picture:"}
+                            </label>
+                            <ProfilePic>
 
-                            <div onClick={handleClick} style = {{cursor:"pointer"}}>
-                                {image ? (
-                                    // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                                    <img src = {URL.createObjectURL(image)}
-                                    alt = "upload image" className="img-display-after"/>
-                                ) :(
-                                    // eslint-disable-next-line jsx-a11y/img-redundant-alt
-                                    <img src = "../Image/pro.jpg" alt = "upload image" className="img-display-before"/>
-                                )}
+                                <div onClick={handleClick} style={{ cursor: "pointer" }}>
+                                    {image ? (
+                                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
+                                        <img src={URL.createObjectURL(image)}
+                                            alt="upload image" className="img-display-after" />
+                                    ) : (
+                                        // eslint-disable-next-line jsx-a11y/img-redundant-alt
+                                        <img src="../Image/profile.png" alt="upload image" className="img-display-before" />
+                                    )}
 
-                                <input
-                                    id = "image-upload-input"
-                                    type = "file"
-                                    onChange={onUpload}
-                                    ref = {hiddenFileInput}
-                                    style={{display:"none"}}
-                                />
-                            </div>
-                        </ProfilePic>
-                    </Profile>
-                    <FormContainer>
-                        <FormContainer1>
+                                    <input
+                                        id="image-upload-input"
+                                        type="file"
+                                        onChange={onUpload}
+                                        ref={hiddenFileInput}
+                                        style={{ display: "none" }}
+                                    />
+                                </div>
+                            </ProfilePic>
+                        </Profile>
+                        <FormContainer>
+                            <FormContainer1>
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Full Name:</label>
-                            <Input {...formik.getFieldProps('fullName')} placeholder = "Full Name"/>
+                                <RequiredLabel style={{ color: "white" }}>Full Name*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('fullName')} placeholder="Full Name" required aria-required="true" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>College:</label>
-                            <Input {...formik.getFieldProps('college')} placeholder = "College"/>
+                                <RequiredLabel style={{ color: "white" }}>College*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('college')} placeholder="College" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Enrollment Number:</label>
-                            <Input {...formik.getFieldProps('enrollmentNumber')} placeholder = "Enrollment No."/>
+                                <RequiredLabel style={{ color: "white" }}>Enrollment Number*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('enrollmentNumber')} placeholder="Enrollment No." />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Company:</label>
-                            <Input {...formik.getFieldProps('company')} placeholder = "Company"/>
+                                <RequiredLabel style={{ color: "white" }}>Company*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('company')} placeholder="Company" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Password:</label>
-                            <Input {...formik.getFieldProps('password')} placeholder = "Password" type = "password"/>
+                                <RequiredLabel style={{ color: "white" }}>Password*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('password')} placeholder="Password" type="password" />
 
-                        </FormContainer1>
+                            </FormContainer1>
 
-                        <FormContainer2>
-                            <label style={{marginLeft: "10px", color:"white"}}>Email:</label>
-                            <Input {...formik.getFieldProps('email')} placeholder = "Email" type = "email"/>
+                            <FormContainer2>
+                                <RequiredLabel style={{ color: "white" }}>Email*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('email')} placeholder="Email" type="email" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Branch:</label>
-                            <Input {...formik.getFieldProps('branch')} placeholder = "Branch"/>
+                                <RequiredLabel style={{ color: "white" }}>Branch*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('branch')} placeholder="Branch" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Passing Year:</label>
-                            <Input {...formik.getFieldProps('passingYear')} placeholder = "Passing Year"/>
+                                <RequiredLabel style={{ color: "white" }}>Passing Year*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('passingYear')} placeholder="Passing Year" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Package:</label>
-                            <Input {...formik.getFieldProps('package')} placeholder = "Package"/>
+                                <RequiredLabel style={{ color: "white" }}>Package*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('package')} placeholder="Package" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Confirm Password:</label>
-                            <Input {...formik.getFieldProps('confirmPassword')} placeholder = "Confirm Password" type = "password"/>
+                                <RequiredLabel style={{ color: "white" }}>Confirm Password*:</RequiredLabel>
+                                <Input {...formik.getFieldProps('confirmPassword')} placeholder="Confirm Password" type="password" />
 
-                        </FormContainer2>
-                    </FormContainer>
-                    
+                            </FormContainer2>
+                        </FormContainer>
 
-                    <SocialMedia>
-                        <p
-                        style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color:"white"}}
-                        >Your's Social Media Profiles</p>
-                        <SocialMediaConatiner>
-                            <label style={{marginLeft: "10px", color:"white"}}>LinkedIn:</label>
-                            <Input {...formik.getFieldProps('linkedIn')} placeholder = "LinkedIn Profile"/>
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Instagram:</label>
-                            <Input {...formik.getFieldProps('instagram')} placeholder = "Instagram Profile"/>
+                        <SocialMedia>
+                            <p
+                                style={{ fontWeight: "bold", fontSize: "25px", marginLeft: "190px", color: "white" }}
+                            >Your's Social Media Profiles</p>
+                            <SocialMediaConatiner>
+                                <label style={{ marginLeft: "10px", color: "white" }}>LinkedIn:</label>
+                                <Input {...formik.getFieldProps('linkedIn')} placeholder="LinkedIn Profile" />
 
-                            <label style={{marginLeft: "10px", color:"white"}}>Github:</label>
-                            <Input {...formik.getFieldProps('twitter')} placeholder = "Twitter Profile"/>
-                        </SocialMediaConatiner>
-                    </SocialMedia>
-                    <Interview>
-                        <p style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color:"white"}}> Share Your Interview Experience</p>
-                        <Textarea {...formik.getFieldProps('interview')} rows="20" cols="68" placeholder="Write your detail interview experience"></Textarea>
-                    </Interview>
-                    <Button type="button" onClick={formik.handleSubmit}>REGISTER</Button>
-                </Form>
+                                <label style={{ marginLeft: "10px", color: "white" }}>Instagram:</label>
+                                <Input {...formik.getFieldProps('instagram')} placeholder="Instagram Profile" />
 
-                
+                                <label style={{ marginLeft: "10px", color: "white" }}>Github:</label>
+                                <Input {...formik.getFieldProps('twitter')} placeholder="Twitter Profile" />
+                            </SocialMediaConatiner>
+                        </SocialMedia>
+                        <Interview>
+                            <p style={{ fontWeight: "bold", fontSize: "25px", marginLeft: "190px", color: "white" }}> Share Your Interview Experience * </p>
+                            <Textarea {...formik.getFieldProps('interview')} rows="20" cols="68" placeholder="Write your detail interview experience"></Textarea>
+                        </Interview>
+                        <Button type="button" onClick={formik.handleSubmit}>REGISTER</Button>
+                    </Form>
 
-            </Wrapper>
 
-        </Container>
+
+                </Wrapper>
+
+            </Container>
         </Container1>
-        
     )
 }
