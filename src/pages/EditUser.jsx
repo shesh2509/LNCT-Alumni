@@ -142,6 +142,11 @@ const Textarea = styled.textarea`
     }
 
 `
+const RequiredLabel = styled.label`
+    margin-left: 10px;
+    color: red;
+`
+
 
 export default function EditUser(){
 
@@ -235,7 +240,7 @@ export default function EditUser(){
             
             <Wrapper>
                 <Title> Edit Your Profile</Title>
-
+                <p style={{color:"#b82020", marginLeft:"300px", marginBottom:"0px", marginTop:"0px"}} >All * are required field</p>
                 <Form onSubmit={handleSubmit}>
                     <Profile>
                         <label htmlFor = "image-upload-label" className="image-upload-label">
@@ -267,31 +272,31 @@ export default function EditUser(){
                     <FormContainer>
                         <FormContainer1>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Full Name:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Full Name*:</RequiredLabel>
                             <Input type="text" name="fullName" value={profile?.fullName} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>College:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>College*:</RequiredLabel>
                             <Input  type="text" name="college" value={profile?.college} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Enrollment Number:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Enrollment Number*:</RequiredLabel>
                             <Input  type="text" name="enrollmentNumber" value={profile?.enrollmentNumber} disabled/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Company:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Company*:</RequiredLabel>
                             <Input  type="text" name="company" value={profile?.company} onChange={handleInputChange}/>
 
                         </FormContainer1>
 
                         <FormContainer2>
-                            <label style={{marginLeft: "10px", color: "white"}}>Email:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Email*:</RequiredLabel>
                             <Input type="email" name="email" value={profile?.email} disabled/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Branch:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Branch*:</RequiredLabel>
                             <Input type="text" name="branch" value={profile?.branch} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Passing Year:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Passing Year*:</RequiredLabel>
                             <Input type="text" name="passingYear" value={profile?.passingYear} onChange={handleInputChange}/>
 
-                            <label style={{marginLeft: "10px", color: "white"}}>Package:</label>
+                            <RequiredLabel style={{marginLeft: "10px", color: "white"}}>Package*:</RequiredLabel>
                             <Input type="text" name="package" value={profile?.package} onChange={handleInputChange}/>
 
                         </FormContainer2>
@@ -314,7 +319,7 @@ export default function EditUser(){
                         </SocialMediaConatiner>
                     </SocialMedia>
                     <Interview>
-                        <p style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color: "white"}}> Share Your Interview Experience</p>
+                        <p style={{fontWeight:"bold", fontSize: "25px", marginLeft:"190px", color: "white"}}> Share Your Interview Experience *</p>
                         <Textarea  rows="20" cols="68" name="interview" value={profile?.interview} onChange={handleInputChange}></Textarea>
                     </Interview>
                     <Button type="submit">UPDATE</Button>
