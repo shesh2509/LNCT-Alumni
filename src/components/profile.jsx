@@ -9,7 +9,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     background-color: rgb(17 17 17 );
-    
+    margin-bottom: 30px;
 `
 
 const Wrapper = styled.div`
@@ -18,8 +18,8 @@ const Wrapper = styled.div`
 `
 
 const Div1 = styled.div`
-    height: 280px;
-    width: 200px;
+    height: 310px;
+    width: 250px;
     background-color: #212121;
     border-radius: 15px;
     cursor: pointer;
@@ -39,11 +39,11 @@ const Image = styled.img`
     border-radius: 50%;
     position: absolute;
     margin-top: 25px;
-    margin-left: 25px;
+    margin-left: 50px;
 `
 
 const Ddiv = styled.div`
-    width: 200px;
+    width: 250px;
     margin-top: 170px;
     display: flex;
     flex-direction: column;
@@ -81,8 +81,13 @@ export default function profile({item}) {
                     <Div1>
                         <Image src = {item.profilePic}></Image>
                         <Ddiv>
-                            <Name1>{item.fullName} <br/></Name1>
-                            <Name>{item.college}, {item.branch}, {item.passingYear} <br/></Name>
+                            <Name1>{item.fullName.toUpperCase()} <br/></Name1>
+                            <div style={{display:"flex", flexDirection:"column",justifyContent:"center", alignItems:"center"}}>
+                                <Name>{item.college}</Name>
+                                <Name>{item.branch}</Name>
+                                <Name>{item.passingYear}</Name>
+                            </div>
+                            
                             <Name2>{item.company.toUpperCase()}</Name2>
                         </Ddiv>
                     </Div1>
