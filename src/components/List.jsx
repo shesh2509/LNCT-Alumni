@@ -20,7 +20,7 @@ const Heading = styled.h1`
     font-weight: 500;
     text-transform: uppercase;
     margin-top: 30px;
-    margin-left: 370px;
+    margin-left: 390px;
 `
 
 const Wrapper = styled.div`
@@ -28,10 +28,8 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 `
-
-
 
 
 export default function List() {
